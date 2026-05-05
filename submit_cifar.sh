@@ -9,13 +9,21 @@
 
 # Networking Configuration
 export MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
-export MASTER_PORT=29505
+
+# Deterministic port (same on all nodes, avoids collisions)
+export MASTER_PORT=$((10000 + SLURM_JOB_ID % 50000))
+
 export NCCL_DEBUG=INFO
 
-# Path to your project directory (where venv lives)
+# Debug (important for multi-node issues)
+echo "[$(hostname)] MASTER_ADDR=$MASTER_ADDR"
+echo "[$(hostname)] MASTER_PORT=$MASTER_PORT"
+echo "[$(hostname)] NODE_RANK=$SLURM_NODEID"
+
+# Path to your project directory
 PROJECT_DIR=$SLURM_SUBMIT_DIR
 
-# Activate venv (recommended)
+# Activate venv
 source $PROJECT_DIR/venv/bin/activate
 
 # Launch with torchrun
