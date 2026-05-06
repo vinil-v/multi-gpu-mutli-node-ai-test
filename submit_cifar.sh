@@ -14,6 +14,7 @@ export MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
 export MASTER_PORT=$((10000 + SLURM_JOB_ID % 50000))
 
 export NCCL_DEBUG=INFO
+export OMP_NUM_THREADS=1
 
 # Debug (important for multi-node issues)
 echo "[$(hostname)] MASTER_ADDR=$MASTER_ADDR"

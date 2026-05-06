@@ -87,9 +87,9 @@ def build_dataloader(rank, world_size, transform, data_root):
         dataset,
         batch_size=128,
         sampler=sampler,
-        num_workers=4,
+        num_workers=0,
         pin_memory=True,
-        persistent_workers=True
+        persistent_workers=False
     )
 
     return dataloader, sampler
