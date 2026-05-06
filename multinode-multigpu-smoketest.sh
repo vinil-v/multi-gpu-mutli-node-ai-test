@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:8
 #SBATCH --cpus-per-task=32
 #SBATCH --partition=gpu
-#SBATCH --output=ddp_%j.log
+#SBATCH --output=ddp_smoketest_%j.log
 
 # Master node
 export MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
