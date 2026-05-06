@@ -22,11 +22,14 @@ def test_distributed():
     dist.all_reduce(tensor, op=dist.ReduceOp.SUM)
     
     if rank == 0:
+        print(f"-----------------------------------------------------------")
         print(f"--- Cluster Test Results ---")
+        print(f"-----------------------------------------------------------")
         print(f"Total GPUs (World Size): {world_size}")
         print(f"Expected Sum: {sum(range(world_size))}")
         print(f"Actual Sum: {tensor.item()}")
         print(f"Status: {'SUCCESS' if tensor.item() == sum(range(world_size)) else 'FAILURE'}")
+        print(f"-----------------------------------------------------------")
 
 if __name__ == "__main__":
     test_distributed()

@@ -13,7 +13,7 @@ export MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
 # Deterministic port (same on all nodes, avoids collisions)
 export MASTER_PORT=$((10000 + SLURM_JOB_ID % 50000))
 
-export NCCL_DEBUG=INFO
+export NCCL_DEBUG=WARN
 export OMP_NUM_THREADS=1
 
 # Debug (important for multi-node issues)

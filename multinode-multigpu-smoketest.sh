@@ -14,7 +14,7 @@ export MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
 export MASTER_PORT=$(shuf -i 10000-65535 -n 1)
 
 # NCCL
-export NCCL_DEBUG=INFO
+export NCCL_DEBUG=WARN
 export NCCL_IB_DISABLE=0
 export NCCL_P2P_DISABLE=0
 export NCCL_SOCKET_IFNAME=eth0
