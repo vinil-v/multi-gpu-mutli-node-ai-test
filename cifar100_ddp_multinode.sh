@@ -35,4 +35,4 @@ srun $PROJECT_DIR/venv/bin/torchrun \
     --rdzv_id=$SLURM_JOB_ID \
     --rdzv_backend=c10d \
     --rdzv_endpoint=$MASTER_ADDR:$MASTER_PORT \
-    $PROJECT_DIR/cifar_hpc_test.py
+    $PROJECT_DIR/cifar100_test.py
