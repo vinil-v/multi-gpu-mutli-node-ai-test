@@ -30,4 +30,3 @@ def test_distributed():
 
 if __name__ == "__main__":
     test_distributed()
-    
