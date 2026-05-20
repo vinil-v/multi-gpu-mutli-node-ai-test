@@ -15,7 +15,7 @@ def setup_distributed():
     
     # Master node handling (Rank 0 info)
     master_addr = os.environ["MASTER_ADDR"]
-    master_port = os.environ.get("MASTER_PORT", "29500")
+    master_port = os.environ["MASTER_PORT"]
     
     if rank == 0:
         print(f"--> Initializing DDP on Master: {master_addr}:{master_port}")

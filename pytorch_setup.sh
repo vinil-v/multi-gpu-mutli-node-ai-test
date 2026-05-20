@@ -1,3 +1,4 @@
+#!/bin/bash
 # 1. Create a dedicated directory structure on your NFS mount
 mkdir -p /shared/apps/pytorch_env
 
@@ -15,7 +16,7 @@ pip install --upgrade pip setuptools wheel
 
 # 6. Install PyTorch with native CUDA 12 support (optimized for modern GPU hardware)
 # Note: For Ubuntu 24.04 and modern compute nodes, cuda-12.1 or higher is standard.
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu132
+pip install torch torchvision torchaudio 
 
 # 7. (Optional but highly recommended) Verify the local installation sees your GPUs
 python3 -c "import torch; print('PyTorch Version:', torch.__version__); print('CUDA Available:', torch.cuda.is_available())"
