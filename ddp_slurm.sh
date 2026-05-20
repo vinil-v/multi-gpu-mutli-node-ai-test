@@ -16,7 +16,7 @@ set -e
 source /shared/apps/pytorch_env/bin/activate
 
 # --- Network & InfiniBand Tuning Layout ---
-export NCCL_DEBUG=INFO
+export NCCL_DEBUG=WARN
 export NCCL_IB_DISABLE=0
 export NCCL_P2P_DISABLE=0
 

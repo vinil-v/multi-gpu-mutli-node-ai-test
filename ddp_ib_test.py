@@ -31,7 +31,7 @@ def setup_distributed():
     
     if rank == 0:
         print("=" * 80)
-        print(" BEYOND FLOPS - HPC CLUSTER INTERACTION MONITOR")
+        print("HPC CLUSTER INTERACTION MONITOR")
         print("=" * 80)
         print(f"--> Initializing DDP on Master Node : {master_addr}")
         print(f"--> Dynamic Coordination Port     : {master_port}")
