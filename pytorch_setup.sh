@@ -16,4 +16,4 @@ pip install --upgrade pip setuptools wheel
 
 # 6. Install PyTorch with native CUDA 12 support (optimized for modern GPU hardware)
 
-pip install torch torchvision torchaudio psutils
+pip install torch torchvision torchaudio psutil

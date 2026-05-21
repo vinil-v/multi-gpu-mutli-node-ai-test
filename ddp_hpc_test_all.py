@@ -41,8 +41,7 @@ def get_nvidia_driver_version():
         if os.path.exists(driver_path):
             with open(driver_path, "r") as f:
                 first_line = f.readline()
-                # Typically format contains: "NVIDIA UNIX x86_64 Kernel Module  535.104.05 ..."
-                parts = first_line.split("Kernel Module")
+                parts = first_line.split("x86_64")
                 if len(parts) > 1:
                     return parts[1].split()[0].strip()
         return "Unknown"
