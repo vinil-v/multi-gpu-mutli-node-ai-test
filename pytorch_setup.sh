@@ -15,11 +15,5 @@ source pytorch_env/bin/activate
 pip install --upgrade pip setuptools wheel
 
 # 6. Install PyTorch with native CUDA 12 support (optimized for modern GPU hardware)
-# Note: For Ubuntu 24.04 and modern compute nodes, cuda-12.1 or higher is standard.
-pip install torch torchvision torchaudio 
 
-# 7. (Optional but highly recommended) Verify the local installation sees your GPUs
-python3 -c "import torch; print('PyTorch Version:', torch.__version__); print('CUDA Available:', torch.cuda.is_available())"
-
-# 8. Deactivate the environment once setup is complete
-deactivate
+pip install torch torchvision torchaudio psutils
